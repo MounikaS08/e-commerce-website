@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: novashop-mounika
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NOVASHOP_DEMO_MODE
+        value: "false"
+      - key: MONGODB_DB
+        value: NovaShop
+      - key: MONGODB_URI
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

@@ -17,6 +17,12 @@ npm start
 
 Open <http://localhost:3000>. The storefront displays a notice when local demo mode is active. The cart is saved in this browser; demo orders and newsletter subscriptions are stored in server memory until restart. Product stock changes made by demo orders also reset when the server restarts.
 
+## Deploy to Render
+
+This repository includes a Render Blueprint in `render.yaml`. Open the [Render Blueprint deploy page](https://render.com/deploy?repo=https://github.com/MounikaS08/e-commerce-website), sign in to Render, and connect the GitHub repository. Render will ask for the private `MONGODB_URI`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD` values. Enter them only in Render's environment-variable form; do not commit them to the repository. The admin password must be at least 12 characters.
+
+The service uses MongoDB database `NovaShop`, runs the production server, and checks `/api/health` before marking deployment healthy. The MongoDB Atlas network access list must allow connections from Render (use Atlas's documented Render connectivity guidance rather than exposing database access broadly). After the first successful deployment, Render provides the public `https://...onrender.com` URL in the service dashboard. The free web service may sleep when idle, so the first request after inactivity can take longer.
+
 ## Optional MongoDB setup
 
 To use persistent data instead of local demo mode, you need a MongoDB Atlas cluster, a database user, and an IP access-list entry for the development machine.

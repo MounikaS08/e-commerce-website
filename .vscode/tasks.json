@@ -39,16 +39,9 @@
 			"group": "build"
 		},
 		{
-			"label": "Check Git push configuration",
+			"label": "Commit Render deployment setup",
 			"type": "shell",
-			"command": "git --version; git config --global user.name; git config --global user.email; git ls-remote https://github.com/MounikaS08/e-commerce-website.git",
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Initialize and stage NovaShop",
-			"type": "shell",
-			"command": "git init -b main; if ($?) { git add -A }; if ($?) { git status --short }",
+			"command": "git add render.yaml README.md server.js .vscode/tasks.json; if ($?) { git diff --cached --check }; if ($?) { git commit -F .git-commit-message.tmp }",
 			"isBackground": false,
 			"problemMatcher": []
 		}

@@ -16,6 +16,7 @@ const authStore = createAuthStore({
   adminEmail: process.env.ADMIN_EMAIL,
   adminPassword: process.env.ADMIN_PASSWORD
 });
+app.set("trust proxy", 1);
 
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
   throw new Error("PORT must be a valid TCP port between 1 and 65535.");
@@ -175,7 +176,7 @@ app.use("/api", (request, response, next) => {
   request.cartClientId = match ? match[1] : randomUUID();
 
   if (!match) {
-    const secure = request.secure ? "; Secure" : "";
+    const secure = request.secure || process.env.NODE_ENV === "production" ? "; Secure" : "";
     response.setHeader("Set-Cookie", `novashop-cart-id=${request.cartClientId}; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000${secure}`);
   }
   const sessionMatch = (request.headers.cookie || "").match(/(?:^|;\s*)novashop-session=([A-Za-z0-9_-]{40,100})(?:;|$)/);
