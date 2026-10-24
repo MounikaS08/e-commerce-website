@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start NovaShop",
+			"type": "shell",
+			"command": "npm start",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run project checks",
+			"type": "shell",
+			"command": "npm run check",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Run NovaShop tests",
+			"type": "shell",
+			"command": "npm test",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Start NovaShop with accounts",
+			"type": "shell",
+			"command": "npm start",
+			"options": {
+				"env": {
+					"PORT": "3001"
+				}
+			},
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check Git push configuration",
+			"type": "shell",
+			"command": "git --version; git config --global user.name; git config --global user.email; git ls-remote https://github.com/MounikaS08/e-commerce-website.git",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Initialize and stage NovaShop",
+			"type": "shell",
+			"command": "git init -b main; if ($?) { git add -A }; if ($?) { git status --short }",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

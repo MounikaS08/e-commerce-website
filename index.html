@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NovaShop — discover thoughtful finds across fashion, beauty, and more."
+    />
+    <title>NovaShop — Find your next favorite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#" aria-label="NovaShop home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 8.5h14l1 12H4l1-12Z"/><path d="M8.5 9V6a3.5 3.5 0 0 1 7 0v3"/></svg>
+          </span>
+          <span>Nova<span class="brand-light">Shop</span></span>
+        </a>
+
+        <div class="sidebar-label">Discover</div>
+        <nav class="nav-list">
+          <a class="nav-link active" href="#home" data-nav="Home"><span class="icon" data-icon="home"></span>Home</a>
+          <a class="nav-link" href="#categories" data-nav="Categories"><span class="icon" data-icon="grid"></span>Categories</a>
+          <a class="nav-link" href="#deals" data-nav="Deals"><span class="icon" data-icon="tag"></span>Deals<span class="nav-badge">Hot</span></a>
+          <a class="nav-link" href="#new-arrivals" data-nav="New arrivals"><span class="icon" data-icon="sparkles"></span>New arrivals</a>
+          <a class="nav-link" href="#best-sellers" data-nav="Best sellers"><span class="icon" data-icon="star"></span>Best sellers</a>
+          <a class="nav-link" href="#best-sellers" data-nav="Brands"><span class="icon" data-icon="gem"></span>Brands</a>
+        </nav>
+
+        <div class="sidebar-label sidebar-label-spaced">Your space</div>
+        <nav class="nav-list">
+          <a class="nav-link" href="#categories" data-nav="Collections"><span class="icon" data-icon="layers"></span>Collections</a>
+          <a class="nav-link" href="#orders" data-nav="My orders"><span class="icon" data-icon="box"></span>My orders</a>
+          <a class="nav-link" href="#best-sellers" data-nav="Wishlist"><span class="icon" data-icon="heart"></span>Wishlist <span class="wishlist-count" id="wishlist-count">0</span></a>
+          <a class="nav-link" href="#promo-code" data-nav="Coupons"><span class="icon" data-icon="ticket"></span>Coupons</a>
+          <a class="nav-link" href="#home" data-nav="Account settings"><span class="icon" data-icon="user"></span>Account settings</a>
+        </nav>
+
+        <div class="sidebar-promo">
+          <span class="eyebrow">A little something for you</span>
+          <strong>Summer, <br />your way.</strong>
+          <span>Up to 50% off the good stuff.</span>
+          <a href="#deals" class="promo-link">Explore the edit <span aria-hidden="true">↗</span></a>
+          <div class="promo-orb promo-orb-one"></div>
+          <div class="promo-orb promo-orb-two"></div>
+        </div>
+
+        <a class="help-link" href="mailto:hello@novashop.example">
+          <span class="icon" data-icon="headset"></span>
+          <span><strong>Need a hand?</strong><small>We're happy to help</small></span>
+          <span class="icon help-arrow" data-icon="chevron"></span>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" type="button">
+          <span class="icon" data-icon="sun"></span><span>Light mode</span><span class="theme-switch"></span>
+        </button>
+      </aside>
+
+      <main class="main-content" id="home">
+        <header class="topbar">
+          <button class="mobile-menu icon-button" id="mobile-menu" aria-label="Open navigation"><span class="icon" data-icon="menu"></span></button>
+          <label class="search-box">
+            <span class="icon" data-icon="search"></span>
+            <input id="search-input" type="search" placeholder="Search products, brands and more..." autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+          <div class="topbar-actions">
+            <button class="icon-button top-wishlist" id="wishlist-button" aria-label="Show wishlist"><span class="icon" data-icon="heart"></span><span class="action-label">Wishlist</span></button>
+            <button class="icon-button notification-button" aria-label="Notifications"><span class="icon" data-icon="bell"></span><i></i></button>
+            <button class="profile-button" id="account-button" type="button" aria-label="Open account">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="" />
+              <span><strong id="account-name">Your account</strong><small id="account-status">Sign in or register</small></span>
+              <span class="icon" data-icon="chevron"></span>
+            </button>
+            <button class="admin-open-button" id="admin-button" type="button" hidden>Admin</button>
+          </div>
+        </header>
+
+        <p class="demo-mode-notice" id="demo-mode-notice" role="status" hidden>Local demo: catalog from bundled sample data. Your bag is saved in this browser; accounts, orders, and newsletter subscriptions are temporary. No payment is collected.</p>
+
+        <section class="hero" aria-label="Featured collection">
+          <div class="hero-copy">
+            <span class="hero-kicker"><span></span> The NovaShop edit · New-season favorites</span>
+            <h1>A fresh take on<br /><em>what you love.</em></h1>
+            <p>Standout fashion, beauty, tech and home finds—selected to make the everyday feel exceptional.</p>
+            <a class="button button-light" href="#best-sellers">Discover your favorites <span aria-hidden="true">↗</span></a>
+            <div class="hero-pagination"><span class="current"></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="hero-image" role="img" aria-label="Fashion portrait from the NovaShop new-season collection"></div>
+          <div class="hero-decoration" aria-hidden="true"></div>
+        </section>
+
+        <section class="category-strip" id="categories" aria-label="Shop by category">
+          <button class="category-item selected" data-category="All">
+            <span class="category-icon category-lavender"><span class="icon" data-icon="grid"></span></span><span>Everything</span>
+          </button>
+          <button class="category-item" data-category="Fashion">
+            <span class="category-icon category-peach"><span class="icon" data-icon="shirt"></span></span><span>Fashion</span>
+          </button>
+          <button class="category-item" data-category="Beauty">
+            <span class="category-icon category-pink"><span class="icon" data-icon="sparkles"></span></span><span>Beauty</span>
+          </button>
+          <button class="category-item" data-category="Tech">
+            <span class="category-icon category-blue"><span class="icon" data-icon="headphones"></span></span><span>Tech</span>
+          </button>
+          <button class="category-item" data-category="Home">
+            <span class="category-icon category-yellow"><span class="icon" data-icon="lamp"></span></span><span>Home</span>
+          </button>
+          <button class="category-item" data-category="Accessories">
+            <span class="category-icon category-green"><span class="icon" data-icon="gem"></span></span><span>Accessories</span>
+          </button>
+        </section>
+
+        <section class="campaign-grid" id="deals" aria-label="Current offers">
+          <a class="campaign-card campaign-sale" href="#best-sellers">
+            <span class="campaign-overline">Limited-time offers</span><strong>Exceptional finds.<br />Better prices.</strong>
+            <span class="campaign-cta">Save up to 31% <span>↗</span></span>
+            <span class="campaign-art sale-art" aria-hidden="true">✳</span>
+          </a>
+          <a class="campaign-card campaign-delivery" href="#new-arrivals">
+            <span class="campaign-overline">Complimentary delivery</span><strong>Free shipping<br />on orders over ₹999.</strong>
+            <span class="campaign-cta">Explore customer favourites <span>↗</span></span>
+            <span class="campaign-art delivery-art" aria-hidden="true">✦</span>
+          </a>
+          <a class="campaign-card campaign-arrivals" href="#new-arrivals">
+            <span class="campaign-overline">New season collection</span><strong>New arrivals.<br />Made for every day.</strong>
+            <span class="campaign-cta">Discover what’s new <span>↗</span></span>
+            <span class="campaign-art arrival-art" aria-hidden="true">✺</span>
+          </a>
+        </section>
+
+        <section class="catalog-toolbar" aria-label="Product filters">
+          <span id="results-count" aria-live="polite">Showing all finds</span>
+          <div class="catalog-actions">
+            <label class="filter-control">Price
+              <select id="price-filter" aria-label="Filter by maximum price">
+                <option value="all">Any price</option>
+                <option value="2500">Up to ₹2,500</option>
+                <option value="5000">Up to ₹5,000</option>
+                <option value="10000">Up to ₹10,000</option>
+              </select>
+            </label>
+            <label class="filter-control">Sort
+              <select id="sort-select" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: low to high</option>
+                <option value="price-high">Price: high to low</option>
+                <option value="rating">Top rated</option>
+              </select>
+            </label>
+            <button class="clear-filters" id="clear-filters" type="button">Clear filters</button>
+          </div>
+        </section>
+        <section class="product-section" id="best-sellers">
+          <div class="section-heading">
+            <div><span class="section-kicker">Customer favourites</span><h2>Bestsellers & considered finds</h2></div>
+            <button class="text-link" id="view-all-deals">View all <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="product-grid" id="best-product-grid"></div>
+        </section>
+
+        <section class="product-section recommended-section" id="new-arrivals">
+          <div class="section-heading">
+            <div><span class="section-kicker">More from NovaShop</span><h2>Explore more of the collection</h2></div>
+            <button class="text-link" id="view-all-recommended">View all <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="product-grid" id="recommended-product-grid"></div>
+        </section>
+
+        <footer class="trust-bar">
+          <div><span class="trust-icon" data-icon="shield"></span><span><strong>Checkout, worry-free</strong><small>Your details stay protected</small></span></div>
+          <div><span class="trust-icon" data-icon="refresh"></span><span><strong>Easy returns</strong><small>30 days to change your mind</small></span></div>
+          <div><span class="trust-icon" data-icon="headset"></span><span><strong>Real human help</strong><small>Here when you need us</small></span></div>
+          <div><span class="trust-icon trust-star">✧</span><span><strong>Loved by thousands</strong><small>4.8 out of 5 average rating</small></span></div>
+        </footer>
+      </main>
+
+      <aside class="cart-sidebar" aria-label="Shopping cart">
+        <div class="cart-heading">
+          <div><span class="section-kicker">Your picks</span><h2>Your bag <span id="cart-count">(0)</span></h2></div>
+          <button class="icon-button" id="clear-cart" aria-label="Clear shopping bag"><span class="icon" data-icon="close"></span></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-empty" id="cart-empty">
+          <span class="empty-bag"><span class="icon" data-icon="bag"></span></span>
+          <strong>Your bag is taking a breather</strong>
+          <p>Find something you love and it will show up here.</p>
+          <a href="#best-sellers" class="text-link">Explore bestsellers <span>↗</span></a>
+        </div>
+        <div class="cart-summary" id="cart-summary">
+          <form class="promo-form" id="promo-form">
+            <label for="promo-code">Have a little code?</label>
+            <div><input id="promo-code" type="text" placeholder="Enter promo code" /><button type="submit">Apply</button></div>
+            <span class="promo-message" id="promo-message" aria-live="polite"></span>
+          </form>
+          <div class="summary-line"><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+          <div class="summary-line discount-line" id="discount-line"><span>Discount</span><strong id="discount">−₹0</strong></div>
+          <div class="summary-line"><span>Shipping</span><strong class="free-shipping" id="shipping">Free</strong></div>
+          <div class="shipping-progress" id="shipping-progress" aria-live="polite"></div>
+          <div class="summary-total"><span>Total</span><strong id="total">₹0</strong></div>
+          <button class="checkout-button" id="checkout-button">Continue to checkout <span>→</span></button>
+          <div class="payment-note"><span>No payment is collected in this demo</span><span class="payment-logos"><b>ORDER</b><b>SAFE</b></span></div>
+        </div>
+        <div class="cart-recommendations">
+          <div class="section-heading compact"><h3>One more good thing</h3><span class="recommendation-spark">✦</span></div>
+          <div class="mini-product">
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=180&q=80" alt="Classic black sunglasses" />
+            <div><strong>Everyday sunnies</strong><small>Classic black · ₹1,999</small></div>
+            <button class="mini-add" data-add="sunnies" aria-label="Add Everyday sunnies to bag">+</button>
+          </div>
+          <div class="mini-product">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=180&q=80" alt="White and coral sneakers" />
+            <div><strong>Weekend sneakers</strong><small>Cloud white · ₹8,999</small></div>
+            <button class="mini-add" data-add="sneakers" aria-label="Add Weekend sneakers to bag">+</button>
+          </div>
+        </div>
+        <div class="club-card">
+          <div><span class="section-kicker">A very good club</span><strong>Good things<br />come to members.</strong><a href="#newsletter-form">Join Nova Circle <span>↗</span></a></div>
+          <span class="club-star" aria-hidden="true">✦</span>
+        </div>
+      </aside>
+    </div>
+    <footer class="site-footer">
+      <div class="site-footer-main">
+        <section class="footer-brand">
+          <a class="brand" href="#home" aria-label="NovaShop home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8.5h14l1 12H4l1-12Z"/><path d="M8.5 9V6a3.5 3.5 0 0 1 7 0v3"/></svg></span>
+            <span>Nova<span class="brand-light">Shop</span></span>
+          </a>
+          <p>Thoughtful finds for a life well lived. Discover pieces that make the everyday feel a little more exceptional.</p>
+          <div class="footer-socials" aria-label="Social links">
+            <a href="https://www.instagram.com/" aria-label="Instagram" rel="noopener noreferrer">ig</a>
+            <a href="https://www.pinterest.com/" aria-label="Pinterest" rel="noopener noreferrer">p</a>
+            <a href="https://www.facebook.com/" aria-label="Facebook" rel="noopener noreferrer">f</a>
+          </div>
+        </section>
+        <nav class="footer-links" aria-label="Shop categories">
+          <h2>Shop</h2>
+          <a href="#categories" data-footer-category="Fashion">Fashion</a>
+          <a href="#categories" data-footer-category="Beauty">Beauty</a>
+          <a href="#categories" data-footer-category="Tech">Tech</a>
+          <a href="#categories" data-footer-category="Home">Home & living</a>
+          <a href="#categories" data-footer-category="Accessories">Accessories</a>
+        </nav>
+        <nav class="footer-links" aria-label="Customer care">
+          <h2>We're here to help</h2>
+          <a href="mailto:hello@novashop.example?subject=About%20NovaShop">About us</a>
+          <a href="mailto:hello@novashop.example">Contact us</a>
+          <a href="mailto:hello@novashop.example?subject=FAQs">FAQs</a>
+          <a href="mailto:hello@novashop.example?subject=Help%20center">Help center</a>
+          <a href="mailto:hello@novashop.example?subject=Shipping%20and%20returns">Shipping & returns</a>
+          <a href="mailto:hello@novashop.example?subject=Refund%20policy">Refund policy</a>
+          <a href="mailto:hello@novashop.example?subject=Privacy%20policy">Privacy policy</a>
+        </nav>
+        <section class="footer-newsletter">
+          <h2>A little good in your inbox</h2>
+          <p>New finds, considered edits and the occasional lovely surprise.</p>
+          <form id="newsletter-form">
+            <label class="visually-hidden" for="newsletter-email">Email address</label>
+            <input id="newsletter-email" name="email" type="email" placeholder="Your email address" maxlength="254" autocomplete="email" required />
+            <button type="submit" aria-label="Subscribe to newsletter">Join <span aria-hidden="true">→</span></button>
+          </form>
+          <span id="newsletter-message" class="newsletter-message" role="status" aria-live="polite"></span>
+          <p class="footer-contact">Questions? <a href="mailto:hello@novashop.example">hello@novashop.example</a></p>
+        </section>
+      </div>
+      <div class="site-footer-bottom">
+        <span>© <span id="copyright-year">2026</span> NovaShop. Thoughtfully yours.</span>
+        <div class="footer-payments" aria-label="Planned payment methods"><span>Card</span><span>UPI</span><span>COD</span><small>Planned · not active</small></div>
+        <span>No payment provider connected · Easy 30-day returns</span>
+      </div>
+    </footer>
+    <dialog class="quick-view-dialog" id="quick-view-dialog" aria-labelledby="quick-view-name">
+      <button class="quick-view-close icon-button" id="quick-view-close" type="button" aria-label="Close product details"><span class="icon" data-icon="close"></span></button>
+      <div class="quick-view-content" id="quick-view-content"></div>
+    </dialog>
+    <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
+      <button class="quick-view-close icon-button" id="checkout-close" type="button" aria-label="Close checkout"><span class="icon" data-icon="close"></span></button>
+      <form class="checkout-form" id="checkout-form">
+        <span class="section-kicker">A few details and it's yours</span>
+        <h2 id="checkout-title">Delivery details</h2>
+        <p class="checkout-disclaimer">This demo records an order with payment pending. No payment is collected or processed here.</p>
+        <div class="checkout-fields">
+          <label>Full name<input name="fullName" autocomplete="name" maxlength="100" required /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required /></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" maxlength="30" required /></label>
+          <label>Address line 1<input name="addressLine1" autocomplete="address-line1" maxlength="160" required /></label>
+          <label>Address line 2 <span>(optional)</span><input name="addressLine2" autocomplete="address-line2" maxlength="160" /></label>
+          <label>City<input name="city" autocomplete="address-level2" maxlength="80" required /></label>
+          <label>State / region<input name="state" autocomplete="address-level1" maxlength="80" required /></label>
+          <label>Postal code<input name="postalCode" autocomplete="postal-code" maxlength="20" required /></label>
+          <label>Country<input name="country" autocomplete="country-name" maxlength="80" required value="India" /></label>
+        </div>
+        <p class="checkout-error" id="checkout-error" role="alert" hidden></p>
+        <button class="checkout-button" type="submit">Place order · <span id="checkout-total">₹0</span> <span aria-hidden="true">→</span></button>
+      </form>
+      <section class="order-confirmation" id="order-confirmation" hidden>
+        <span class="confirmation-mark" aria-hidden="true">✓</span>
+        <span class="section-kicker">Order saved</span>
+        <h2>Thank you for choosing NovaShop.</h2>
+        <p>Your order number is <strong id="confirmation-number"></strong>. Payment has not been collected; the order is awaiting payment.</p>
+        <p id="confirmation-tracking" role="status"></p>
+        <button class="checkout-button" id="track-order" type="button">Check order status <span aria-hidden="true">→</span></button>
+      </section>
+    </dialog>
+    <dialog class="orders-dialog checkout-dialog" id="orders" aria-labelledby="orders-title">
+      <button class="quick-view-close icon-button" id="orders-close" type="button" aria-label="Close orders"><span class="icon" data-icon="close"></span></button>
+      <section class="orders-content">
+        <span class="section-kicker">Your NovaShop purchases</span>
+        <h2 id="orders-title">My orders</h2>
+        <p id="orders-message" role="status">Loading your orders…</p>
+        <div id="orders-list"></div>
+      </section>
+    </dialog>
+    <dialog class="account-dialog checkout-dialog" id="account-dialog" aria-labelledby="account-title">
+      <button class="quick-view-close icon-button" id="account-close" type="button" aria-label="Close account"><span class="icon" data-icon="close"></span></button>
+      <section class="account-content">
+        <span class="section-kicker">Your NovaShop account</span>
+        <h2 id="account-title">Sign in</h2>
+        <p id="account-message" role="status">Sign in to keep your order history with your account.</p>
+        <form id="auth-form">
+          <label id="auth-name-field" hidden>Full name<input name="name" autocomplete="name" maxlength="100" /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required /></label>
+          <label>Password<input name="password" type="password" autocomplete="current-password" minlength="12" maxlength="200" required /></label>
+          <p class="auth-error" id="auth-error" role="alert" hidden></p>
+          <button class="checkout-button" type="submit" id="auth-submit">Sign in <span aria-hidden="true">→</span></button>
+        </form>
+        <button class="account-mode-toggle" id="account-mode-toggle" type="button">Create a new account</button>
+        <button class="account-logout" id="account-logout" type="button" hidden>Sign out</button>
+      </section>
+    </dialog>
+    <dialog class="admin-dialog checkout-dialog" id="admin-dialog" aria-labelledby="admin-title">
+      <button class="quick-view-close icon-button" id="admin-close" type="button" aria-label="Close admin dashboard"><span class="icon" data-icon="close"></span></button>
+      <section class="admin-content">
+        <div class="admin-heading">
+          <div><span class="section-kicker">Store management</span><h2 id="admin-title">Admin dashboard</h2></div>
+          <button class="admin-add-product" id="admin-add-product" type="button">Add product +</button>
+        </div>
+        <div class="admin-stats" id="admin-stats"></div>
+        <p class="admin-message" id="admin-message" role="status">Loading store data…</p>
+        <h3>Products</h3>
+        <div class="admin-list" id="admin-products"></div>
+        <h3>Recent orders</h3>
+        <div class="admin-list" id="admin-orders"></div>
+        <form class="admin-product-form" id="admin-product-form" hidden>
+          <h3 id="admin-product-form-title">Add product</h3>
+          <div class="admin-product-fields">
+            <label>Product id<input name="id" pattern="[A-Za-z0-9_-]+" maxlength="80" required /></label>
+            <label>Name<input name="name" maxlength="120" required /></label>
+            <label>Brand<input name="brand" maxlength="100" required /></label>
+            <label>Category<input name="category" maxlength="50" required /></label>
+            <label>Price (₹)<input name="price" type="number" min="0" step="1" required /></label>
+            <label>Old price (₹)<input name="oldPrice" type="number" min="0" step="1" required /></label>
+            <label>Stock<input name="stock" type="number" min="0" step="1" required /></label>
+            <label>Rating<input name="rating" type="number" min="0" max="5" step="0.1" required value="4.5" /></label>
+            <label>Reviews<input name="reviews" type="number" min="0" step="1" required value="0" /></label>
+            <label>Image id<input name="image" pattern="[A-Za-z0-9_-]+" maxlength="120" required /></label>
+            <label>Badge<input name="badge" maxlength="30" /></label>
+            <label>Colors (comma-separated hex)<input name="colors" placeholder="#7650d5, #459875" /></label>
+            <label class="admin-description">Description<textarea name="description" maxlength="1000" rows="3" required></textarea></label>
+          </div>
+          <p class="admin-form-error" id="admin-form-error" role="alert" hidden></p>
+          <div class="admin-form-actions"><button class="admin-cancel" id="admin-cancel-product" type="button">Cancel</button><button class="checkout-button" type="submit">Save product</button></div>
+        </form>
+      </section>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
